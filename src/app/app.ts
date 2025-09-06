@@ -1,31 +1,17 @@
-import { Component, inject } from '@angular/core';
-import { State } from './state';
-import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component1 } from "./component1/component1";
+import { Component2 } from "./component2/component2";
+import { Component3 } from "./component3/component3";
+import { Component4 } from "./component4/component4";
 
 @Component({
   selector: 'app-root',
-  imports: [AsyncPipe],
+  imports: [Component1, Component2, Component3, Component4],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class App {
-  readonly state = inject(State);
 
-  count = this.state.count;
-  countSig = this.state.countSig;
-  count$ = this.state.count$;
-  countFromObservable = 0;
-  countLocal = 0;
-
-  constructor() {
-    this.state.count$.subscribe(value => {
-      this.countFromObservable = value;
-    });
-  }
-
-  protected increment() {
-    this.state.increment();
-    this.countLocal++;
-  }
 
 }

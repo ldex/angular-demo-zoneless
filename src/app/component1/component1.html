@@ -1,0 +1,36 @@
+<div class="back">
+
+<h2>Component 1</h2>
+
+<p>
+  Count local number: {{ countLocal }}
+</p>
+
+<p>
+  Count number from service: {{ getCount() }}
+</p>
+
+<p>
+  Count from service Signal: {{ countSig() }}
+</p>
+
+<p>
+  Count from service Observable (async pipe): {{ count$ | async }}
+</p>
+
+<p>
+  Count from service Observable (subscribe): {{ countFromObservable }}
+</p>
+
+<button (click)="increment()">Increment</button>
+
+<p>
+  Time from service Async Request (subscribe): {{ timeFromObservable }}
+</p>
+<p>
+  Time from service Observable (async pipe): {{ timeFromAsyncRequest$ | async }}
+</p>
+<p>Time from service Signal: {{ state.timeSig() }}</p>
+
+<button (click)="asyncRequest()">Async Http Request</button>
+</div>

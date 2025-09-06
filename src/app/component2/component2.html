@@ -1,0 +1,28 @@
+<div class="back">
+
+<h2>Component 2</h2>
+
+<p>
+  Count number from service: {{ getCount() }}
+</p>
+
+<p>
+  Count from service Signal: {{ countSig() }}
+</p>
+
+<p>
+  Count from service Observable (async pipe): {{ count$ | async }}
+</p>
+
+<p>
+  Count from service Observable (subscribe): {{ countFromObservable }}
+</p>
+
+<p>
+  Time from service Async Request (subscribe): {{ timeFromObservable }}
+</p>
+<p>
+  Time from service Observable (async pipe): {{ timeFromAsyncRequest$ | async }}
+</p>
+
+</div>
